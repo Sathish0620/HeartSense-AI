@@ -1,0 +1,24 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Environment files
+.env
+
+# Trained models
+models/*.pkl
+
+# Generated reports
+reports/figures/*.png
