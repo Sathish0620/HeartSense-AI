@@ -1,16 +1,17 @@
-from preprocessing import (
+from src.preprocessing import (
     load_dataset,
     clean_dataset,
     preprocess_data,
 )
 
-from train import train_models
-from visualization import (
+from src.train import train_models
+from src.visualization import (
     plot_target_distribution,
     plot_correlation_heatmap,
+    plot_model_comparison,
 )
-from evaluate import evaluate_model
-from utils import save_artifacts
+from src.evaluate import evaluate_model
+from src.utils import save_artifacts
 
 def main():
 
@@ -28,6 +29,7 @@ def main():
         y_train,
         y_test,
     )
+    plot_model_comparison(scores)
     evaluate_model(
         best_model,
         X_test,

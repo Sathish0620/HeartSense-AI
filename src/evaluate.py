@@ -14,7 +14,7 @@ from sklearn.metrics import (
     f1_score,
 )
 
-from config import FIGURE_DIR
+from src.config import FIGURE_DIR
 
 
 def evaluate_model(model, X_test, y_test):

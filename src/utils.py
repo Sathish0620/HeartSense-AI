@@ -4,7 +4,7 @@ Utility functions for saving and loading project artifacts.
 
 import joblib
 
-from config import MODEL_DIR
+from src.config import MODEL_DIR
 
 
 def save_artifacts(model, scaler, imputer):
