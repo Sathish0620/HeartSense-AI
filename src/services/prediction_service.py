@@ -5,6 +5,7 @@ Prediction service for HeartSense AI.
 import pandas as pd
 
 from src.utils import load_artifacts
+from src.services.recommendation_service import RecommendationService
 
 
 class PredictionService:
@@ -14,6 +15,7 @@ class PredictionService:
 
     def __init__(self):
         self.model, self.scaler, self.imputer = load_artifacts()
+        self.recommendation_service = RecommendationService()
 
     def predict(self, patient_data: dict):
 
@@ -45,5 +47,9 @@ class PredictionService:
             ),
             "confidence": confidence,
         }
+        recommendation = self.recommendation_service.generate(
+            patient_data, prediction
+        )
+        result["recommendations"] = recommendation
 
         return result
