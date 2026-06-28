@@ -39,7 +39,7 @@ def train_models(X_train, X_test, y_train, y_test):
 
         "Naive Bayes": GaussianNB(),
 
-        "Support Vector Machine": SVC(),
+        "Support Vector Machine": SVC(probability=True, random_state=42,),
 
         "MLP Neural Network": MLPClassifier(
             hidden_layer_sizes=(32, 16),
